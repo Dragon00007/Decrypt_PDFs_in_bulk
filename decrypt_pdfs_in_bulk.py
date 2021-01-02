@@ -12,6 +12,7 @@ import os
 '''
 dirName = input('please input the path to the directory of the PDFs:\n')
 Password = input('please input the password:\n')
+pdf = '.pdf'
 
 def getListOfFiles(dirName):
     # create a list of file and sub directories
@@ -37,9 +38,12 @@ def main():
     listOfFiles = getListOfFiles(dirName)
     # Print the files
     for elem in listOfFiles:
-        p = pikepdf.open(elem, password=Password, allow_overwriting_input=True)
-        p.save(elem)
-        print(elem)
+        if elem.endswith(pdf)
+            p = pikepdf.open(elem, password=Password, allow_overwriting_input=True)
+            p.save(elem)
+            print('"' + elem + '"' + ' has been decrypted successfully.')
+        else:
+            print(elem + ' is not a PDF file.')
     print("****************")
 
 
